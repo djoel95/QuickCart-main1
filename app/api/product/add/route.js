@@ -13,9 +13,9 @@ cloudinary.config({
 
 export async function POST(request) {
     try {
-        const { userID } = getAuth(request)
+        const { userId } = getAuth(request)
 
-        const isSeller = await authSeller(userID)
+        const isSeller = await authSeller(userId)
 
         if (!isSeller) {
             return NextResponse.json({ success: false, message: 'not authorized' });
