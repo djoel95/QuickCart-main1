@@ -8,8 +8,8 @@ export async function GET(request) {
         await connectDB()
 
         const products = await Product.find({})
-
         return NextResponse.json({ success: true, products })
+
     } catch (error) {
         return NextResponse.json({ success: false, message: error.message });
     }
