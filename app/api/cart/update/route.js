@@ -16,7 +16,7 @@ export async function POST(request) {
         const user = await User.findById(userId)
 
         user.cartItems = cartData
-        user.save()
+        await user.save()
 
         return NextResponse.json({ success: true, message: 'Cart updated successfully' })
 
